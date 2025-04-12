@@ -1,0 +1,6 @@
+@AcunMedyaAkademi_NvRFS2_NTier_HostAddress = http://localhost:5079
+
+GET {{AcunMedyaAkademi_NvRFS2_NTier_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

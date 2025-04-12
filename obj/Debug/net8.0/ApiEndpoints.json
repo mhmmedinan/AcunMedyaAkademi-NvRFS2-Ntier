@@ -1,0 +1,44 @@
+[
+  {
+    "ContainingType": "AcunMedyaAkademi_NvRFS2_NTier.Controllers.BrandsController",
+    "Method": "GetBrands",
+    "RelativePath": "api/Brands",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AcunMedyaAkademi_NvRFS2_NTier.Controllers.BrandsController",
+    "Method": "GetBrandName",
+    "RelativePath": "api/Brands/{name}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "name",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AcunMedyaAkademi_NvRFS2_NTier.Controllers.BrandsController",
+    "Method": "GetById",
+    "RelativePath": "api/Brands/getbyid/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
