@@ -24,5 +24,7 @@ public class BaseDbContext:DbContext
         {
             relationShip.DeleteBehavior = DeleteBehavior.Cascade;
         }
+
+       
     }
 }
