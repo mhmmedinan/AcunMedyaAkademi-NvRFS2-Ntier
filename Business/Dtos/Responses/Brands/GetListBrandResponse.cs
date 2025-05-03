@@ -1,4 +1,4 @@
-﻿namespace Business.Dtos.Responses.Brand
+﻿namespace Business.Dtos.Responses.Brands
 {
     public class GetListBrandResponse
     {

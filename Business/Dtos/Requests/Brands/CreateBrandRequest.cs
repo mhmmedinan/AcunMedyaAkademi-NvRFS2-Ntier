@@ -1,4 +1,4 @@
-﻿namespace Business.Dtos.Requests.Brand
+﻿namespace Business.Dtos.Requests.Brands
 {
     public class CreateBrandRequest
     {

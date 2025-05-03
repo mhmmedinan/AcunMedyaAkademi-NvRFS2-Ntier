@@ -8,6 +8,8 @@ public static class BusinessServiceRegistration
 {
     public static IServiceCollection AddBusinessServices(this IServiceCollection services)
     {
+        services.AddAutoMapper(Assembly.GetExecutingAssembly());
+
         services.RegisterAssemblyTypes(Assembly.GetExecutingAssembly()).Where(t=>t.ServiceType.Name.EndsWith("Manager"));
         return services;
     }

@@ -1,6 +1,6 @@
 ﻿using Business.Abstracts;
-using Business.Dtos.Requests.Brand;
-using Business.Dtos.Responses.Brand;
+using Business.Dtos.Requests.Brands;
+using Business.Dtos.Responses.Brands;
 using Entities;
 using Microsoft.AspNetCore.Mvc;
 
