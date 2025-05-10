@@ -1,11 +1,6 @@
 using Business;
-using Business.Abstracts;
-using Business.Concretes;
-using Microsoft.EntityFrameworkCore;
+using Core.Exceptions.Extensions;
 using Repositories;
-using Repositories.Abstracts;
-using Repositories.Concretes;
-using Repositories.Concretes.EntityFramework.Contexts;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -34,6 +29,12 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+    app.ConfigureCustomExceptionMiddleware();
+}
+
+if (app.Environment.IsProduction())
+{
+    app.ConfigureCustomExceptionMiddleware();
 }
 
 // Configure the HTTP request pipeline.

@@ -2,6 +2,7 @@
 using Business.Abstracts;
 using Business.Dtos.Requests.Brands;
 using Business.Dtos.Responses.Brands;
+using Business.Rules;
 using Entities;
 using Repositories.Abstracts;
 
@@ -11,11 +12,13 @@ public class BrandManager : IBrandService
 {
     private readonly IBrandRepository _brandRepository;
     private readonly IMapper _mapper;
+    private readonly BrandBusinessRules _brandBusinessRules;
 
-    public BrandManager(IBrandRepository brandRepository, IMapper mapper)
+    public BrandManager(IBrandRepository brandRepository, IMapper mapper, BrandBusinessRules brandBusinessRules)
     {
         _brandRepository = brandRepository;
         _mapper = mapper;
+        _brandBusinessRules = brandBusinessRules;
     }
 
     public CreatedBrandResponse Add(CreateBrandRequest request)
@@ -34,6 +37,13 @@ public class BrandManager : IBrandService
         //    CreatedDate = addedBrand.CreatedDate,
         //};
 
+
+        // Anti pattern 
+        //var existingBrand = _brandRepository.Get(b=>b.Name==request.Name);
+        //if (existingBrand != null)
+        //    throw new BusinessException($"{request.Name} adında zaten bir marka var");
+
+        _brandBusinessRules.CheckIfBrandNameIsUnique(request.Name);
 
         //AutoMapper
 
