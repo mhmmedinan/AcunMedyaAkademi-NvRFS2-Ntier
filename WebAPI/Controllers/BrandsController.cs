@@ -1,7 +1,9 @@
 ﻿using Business.Abstracts;
+using Business.Constants;
 using Business.Dtos.Requests.Brands;
 using Business.Dtos.Responses.Brands;
 using Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers
@@ -38,6 +40,8 @@ namespace WebAPI.Controllers
         }
 
         [HttpGet]
+        //[Authorize]
+        [Authorize(Roles =OperationClaims.Default)]
         public ActionResult<List<GetListBrandResponse>> GetList()
         {
             return Ok(_brandService.GetList());
